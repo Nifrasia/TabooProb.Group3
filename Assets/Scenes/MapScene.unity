@@ -1384,7 +1384,7 @@ MonoBehaviour:
   moveSpeed: 150
   Corner1: {fileID: 474173903}
   Corner2: {fileID: 196269328}
-  rotationAmount: 0
+  rotationAmount: -50
   newRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!65 &930787836
 BoxCollider:
