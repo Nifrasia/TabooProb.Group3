@@ -7,7 +7,7 @@ public class MainUI : MonoBehaviour
 {
 
     public GameObject toolPanel;
-
+    public GameObject laborMarketPanel;
     public static MainUI instance;
 
     // Start is called before the first frame update
