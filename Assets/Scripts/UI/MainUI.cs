@@ -5,9 +5,8 @@ using TMPro;
 
 public class MainUI : MonoBehaviour
 {
+    public GameObject buildPanel;
 
-    public GameObject toolPanel;
-    public GameObject laborMarketPanel;
     public static MainUI instance;
 
     // Start is called before the first frame update
@@ -16,19 +15,14 @@ public class MainUI : MonoBehaviour
         instance = this;
     }
 
-    public void toggleToolPanel()
+    public void toggleBuildPanel()
     {
-     if(!toolPanel.activeInHierarchy){
-        toolPanel.SetActive(true);
+     if(!buildPanel.activeInHierarchy){
+            buildPanel.SetActive(true);
         }
         else
         {
-            toolPanel.SetActive(false); 
+            buildPanel.SetActive(false); 
         }
-    
-    
-    
     }
-
-
 }
