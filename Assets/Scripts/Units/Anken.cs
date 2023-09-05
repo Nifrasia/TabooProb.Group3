@@ -6,11 +6,7 @@ using UnityEngine.AI;
 public enum UnitState
 {
     Idle,
-    Walk,
-    Plow,
-    Sow,
-    Water,
-    Harvest
+    Walk
 }
 public enum Gender
 {
