@@ -342,10 +342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73245e5489395b40a83625bf905eaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodText: {fileID: 0}
-  stoneText: {fileID: 0}
-  fishText: {fileID: 0}
-  ankenText: {fileID: 0}
+  woodText: {fileID: 1369272918}
+  stoneText: {fileID: 211928636}
+  fishText: {fileID: 205755081}
+  ankenText: {fileID: 715396580}
   buildPanel: {fileID: 1552592133}
 --- !u!224 &145674929 stripped
 RectTransform:
