@@ -18,7 +18,7 @@ public class MainUI : MonoBehaviour
     void Start()
     {
         instance = this;
-        UpdateResourceUI();
+        //UpdateResourceUI();
 
     }
 
@@ -32,11 +32,11 @@ public class MainUI : MonoBehaviour
             buildPanel.SetActive(false); 
         }
     }
-    public void UpdateResourceUI()
-    {
-        woodText.text = Office.instance.Wood.ToString();
-        stoneText.text = Office.instance.Stone.ToString();
-        fishText.text = Office.instance.Fish.ToString();
-        ankenText.text = Office.instance.Anken.ToString();
-    }
+    //public void UpdateResourceUI()
+    //{
+    //    woodText.text = Office.instance.Wood.ToString();
+    //    stoneText.text = Office.instance.Stone.ToString();
+    //    fishText.text = Office.instance.Fish.ToString();
+    //    ankenText.text = Office.instance.Anken.ToString();
+    //}
 }

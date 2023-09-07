@@ -6,25 +6,30 @@ using UnityEngine.AI;
 public enum UnitState
 {
     Idle,
-    Walk
+    Walk,
+    Plow,
+    Sow,
+    Water,
+    Harvest
 }
+
 public enum Gender
 {
     male,
     female
 }
+
 public class Anken : MonoBehaviour
 {
     private int id;
     public int ID { get { return id; } set { id = value; } }
-
     [SerializeField] private int charSkinID;
     public int CharSkinID { get { return charSkinID; } set { charSkinID = value; } }
     public GameObject[] charSkin;
 
     [SerializeField] private int charFaceID;
-    public int CharFaceID { get { return charFaceID; } set { charFaceID = value; } }
-    public Sprite[] charFacePic;
+    //public int CharFaceID { get { return charFaceID; } set { charFaceID = value; } }
+    //public Sprite[] charFacePic;
 
     [SerializeField] private string staffName;
     public string StaffName { get { return staffName; } set { staffName = value; } }
@@ -52,12 +57,11 @@ public class Anken : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

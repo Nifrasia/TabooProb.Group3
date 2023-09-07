@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8633303050564977956}
   - component: {fileID: 5094123396316271666}
+  - component: {fileID: 6226379907084891297}
   - component: {fileID: 2968751672615595945}
   - component: {fileID: 3133333443510055885}
   - component: {fileID: 6274186551472997598}
@@ -52,6 +53,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBuild: 0
   plane: {fileID: 3737814610644462019}
+--- !u!114 &6226379907084891297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3122374149496253777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154a2379eea7e0c428dcae91e6f0155b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 0
+  functional: 0
+  structureName: Fishingpod
+  hp: 1
+  costToBuild: 1200
+  id: 1
+  stage: 0
+  maxStaffNum: 3
+  dayRequired: 5
+  dayPassed: 0
+  produceTimer: 0
+  FarmUI: {fileID: 0}
+  currentWorkers: []
 --- !u!65 &2968751672615595945
 BoxCollider:
   m_ObjectHideFlags: 0
