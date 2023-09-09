@@ -25,15 +25,17 @@ public class Anken : MonoBehaviour
     public int CharSkinID { get { return charSkinID; } set { charSkinID = value; } }
     public GameObject[] charSkin;
 
+
     [SerializeField] private int charFaceID;
-    //public int CharFaceID { get { return charFaceID; } set { charFaceID = value; } }
-    //public Sprite[] charFacePic;
+    public int CharFaceID { get { return charFaceID; } set { charFaceID = value; } }
+    public Sprite[] charFacePic;
+
 
     [SerializeField] private string staffName;
     public string StaffName { get { return staffName; } set { staffName = value; } }
 
-    [SerializeField] private int dailyWage;
-    public int DailyWage { get { return dailyWage; } set { dailyWage = value; } }
+    //[SerializeField] private int dailyWage;
+    //public int DailyWage { get { return dailyWage; } set { dailyWage = value; } }
 
     [SerializeField] private Gender staffGender = Gender.male;
     public Gender StaffGender { get { return staffGender; } set { staffGender = value; } }

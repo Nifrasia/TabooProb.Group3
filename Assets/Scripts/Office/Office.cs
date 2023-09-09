@@ -79,7 +79,7 @@ public class Office : MonoBehaviour
         w.ChangeCharSkin(); //Show 3D model
         w.SetToWalk(rallyPosition.transform.position);
 
-        money -= w.DailyWage;
+        //money -= w.DailyWage;
         AddStaff(w);
 
         //Update UI
@@ -91,7 +91,7 @@ public class Office : MonoBehaviour
     public void AddStaff(Anken w)
     {
         ankens.Add(w);
-        dailyCostWages += w.DailyWage;
+        //dailyCostWages += w.DailyWage;
     }
 
 

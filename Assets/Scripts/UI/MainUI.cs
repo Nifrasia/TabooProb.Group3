@@ -11,6 +11,7 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TMP_Text fishText;
     [SerializeField] private TMP_Text ankenText;
     public GameObject buildPanel;
+    public GameObject laborPanel;
 
     public static MainUI instance;
 
@@ -20,6 +21,14 @@ public class MainUI : MonoBehaviour
         instance = this;
         UpdateResourceUI();
 
+    }
+
+    public void UpdateResourceUI()
+    {
+        woodText.text = Office.instance.Wood.ToString();
+        stoneText.text = Office.instance.Stone.ToString();
+        fishText.text = Office.instance.Fish.ToString();
+        ankenText.text = Office.instance.Ankens.ToString();
     }
 
     public void toggleBuildPanel()
@@ -32,11 +41,18 @@ public class MainUI : MonoBehaviour
             buildPanel.SetActive(false); 
         }
     }
-    public void UpdateResourceUI()
+
+
+    public void toggleLaborPanel()
     {
-        woodText.text = Office.instance.Wood.ToString();
-        stoneText.text = Office.instance.Stone.ToString();
-        fishText.text = Office.instance.Fish.ToString();
-        ankenText.text = Office.instance.Ankens.ToString();
+        if (!laborPanel.activeInHierarchy)
+        {
+            laborPanel.SetActive(true);
+        }
+        else
+        {
+            laborPanel.SetActive(false);
+        }
     }
+
 }

@@ -55,11 +55,14 @@ MonoBehaviour:
   - {fileID: 1307934120170401096, guid: aee87e9ed7bf615458b8c4584a395078, type: 3}
   - {fileID: 1307934120170401096, guid: dc352824e29745a43a473ba5620cac43, type: 3}
   charFaceID: 0
+  charFacePic:
+  - {fileID: 21300000, guid: d1f94eb541d98c94c9e0a776707e9c7c, type: 3}
   staffName: 
   dailyWage: 0
   staffGender: 0
   hired: 0
   state: 0
+  targetStructure: {fileID: 0}
 --- !u!114 &3135301419969568345
 MonoBehaviour:
   m_ObjectHideFlags: 0

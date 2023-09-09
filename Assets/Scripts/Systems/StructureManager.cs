@@ -55,10 +55,8 @@ public class StructureManager : MonoBehaviour
 
     public void BeginNewBuildingPlacement(GameObject prefab)
     {
-        Debug.Log("Enter begig new build");
         if (CheckCostToBuild(prefab) == false)
         {
-            Debug.Log("false");
             return;
         }
 
@@ -126,11 +124,9 @@ public class StructureManager : MonoBehaviour
         int costStone = obj.GetComponent<Structure>().CostToBuildStone;
 
         if (costWood <= Office.instance.Wood && costStone <= Office.instance.Stone) {
-            Debug.Log("enough resource");
             return true;
         }
         else {
-            Debug.Log("not enough resource");
             return false; 
         }
            

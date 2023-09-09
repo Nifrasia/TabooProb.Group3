@@ -297,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3179486717421372747}
   - component: {fileID: 6858522691630187301}
+  - component: {fileID: 1948113807815346473}
   - component: {fileID: 4553760804470958779}
   m_Layer: 5
   m_Name: AnkenCard
@@ -337,6 +338,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8263227312871159846}
   m_CullTransparentMesh: 1
+--- !u!114 &1948113807815346473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8263227312871159846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6d0caa490269a479d07ad1d5225541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  profilePic: {fileID: 6958365473137862216}
+  candidateName: {fileID: 6001948183154254129}
+  idText: {fileID: 8578543399485190837}
+  HireButton: {fileID: 6805318147910882650}
 --- !u!114 &4553760804470958779
 MonoBehaviour:
   m_ObjectHideFlags: 0
