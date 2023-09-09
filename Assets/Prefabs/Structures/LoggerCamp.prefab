@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 802778810649004223}
   - component: {fileID: 463193008366561677}
+  - component: {fileID: -2917860261006375459}
   - component: {fileID: 1429752549253504697}
   - component: {fileID: 4286526896068440759}
   - component: {fileID: 6150425066831943743}
@@ -151,6 +152,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBuild: 0
   plane: {fileID: 142432056175074928}
+--- !u!114 &-2917860261006375459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9090969191442064856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763885133667bbc4fb0d3cd2c33c6450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 1
+  functional: 0
+  structureName: LoggerCamp
+  hp: 0
+  costToBuildWood: 0
+  costToBuildStone: 0
+  id: 0
 --- !u!65 &1429752549253504697
 BoxCollider:
   m_ObjectHideFlags: 0

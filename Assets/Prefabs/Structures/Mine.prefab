@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1520687139346024214}
   - component: {fileID: 1116913264836164893}
+  - component: {fileID: 1848105321489746107}
   - component: {fileID: 3652607554730765867}
   - component: {fileID: 782831535235387990}
   - component: {fileID: 3654574704608363274}
@@ -153,6 +154,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBuild: 0
   plane: {fileID: 3928654694197886199}
+--- !u!114 &1848105321489746107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9203016619188105590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f68fbcd10850514185215237b335b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 1
+  functional: 0
+  structureName: Mine
+  hp: 0
+  costToBuildWood: 20
+  costToBuildStone: 20
+  id: 0
 --- !u!65 &3652607554730765867
 BoxCollider:
   m_ObjectHideFlags: 0

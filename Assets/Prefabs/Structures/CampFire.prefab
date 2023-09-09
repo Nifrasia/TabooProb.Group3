@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3609403543447077265}
   - component: {fileID: 7223801372348225238}
+  - component: {fileID: -1963102089592834447}
   - component: {fileID: 8163158277338732616}
   - component: {fileID: 8602390412490599228}
   - component: {fileID: 2871643599054659135}
@@ -149,6 +150,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBuild: 0
   plane: {fileID: 4373742784777652038}
+--- !u!114 &-1963102089592834447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7422335430637034261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3f7588029680474aac43df4d05e7938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 1
+  functional: 0
+  structureName: Campfire
+  hp: 0
+  costToBuildWood: 20
+  costToBuildStone: 0
+  id: 0
 --- !u!65 &8163158277338732616
 BoxCollider:
   m_ObjectHideFlags: 0

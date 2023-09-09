@@ -65,11 +65,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154a2379eea7e0c428dcae91e6f0155b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  structureType: 0
+  structureType: 2
   functional: 0
   structureName: Fishingpod
   hp: 1
-  costToBuild: 1200
+  costToBuildWood: 20
+  costToBuildStone: 20
   id: 1
   stage: 0
   maxStaffNum: 3

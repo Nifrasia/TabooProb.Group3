@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4064464603972723819}
   - component: {fileID: 7699247697386986057}
+  - component: {fileID: 1334547266081982967}
   - component: {fileID: 2215311615919987318}
   - component: {fileID: 2577827189216813429}
   - component: {fileID: 7723973930075131820}
@@ -52,6 +53,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBuild: 0
   plane: {fileID: 8199104202415417837}
+--- !u!114 &1334547266081982967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593909038401647340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a4f557b789db84aa2973866a0142be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 1
+  functional: 0
+  structureName: CommuCamp
+  hp: 0
+  costToBuildWood: 20
+  costToBuildStone: 0
+  id: 0
 --- !u!65 &2215311615919987318
 BoxCollider:
   m_ObjectHideFlags: 0

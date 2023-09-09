@@ -6,7 +6,7 @@ public enum StructureType
 {
     road,
     building,
-    wheat,
+    fishpond,
 }
 
 public abstract class Structure : MonoBehaviour
@@ -22,8 +22,11 @@ public abstract class Structure : MonoBehaviour
     [SerializeField] protected int hp;
     public int HP { get { return hp; } set { hp = value; } }
 
-    [SerializeField] private int costToBuild;
-    public int CostToBuild { get { return costToBuild; } }
+    [SerializeField] private int costToBuildWood;
+    public int CostToBuildWood { get { return costToBuildWood; } }
+
+    [SerializeField] private int costToBuildStone;
+    public int CostToBuildStone { get { return costToBuildStone; } }
 
     [SerializeField] private int id;
     public int ID { get { return id; } set { id = value; } }

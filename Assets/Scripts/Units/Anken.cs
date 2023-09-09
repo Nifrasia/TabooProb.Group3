@@ -7,10 +7,8 @@ public enum UnitState
 {
     Idle,
     Walk,
-    Plow,
-    Sow,
-    Water,
-    Harvest
+    Death,
+    Attack,
 }
 
 public enum Gender
@@ -49,6 +47,17 @@ public class Anken : MonoBehaviour
     private NavMeshAgent navAgent;
     public NavMeshAgent NavAgent { get { return navAgent; } set { navAgent = value; } }
 
+
+    private float distance;
+
+    [SerializeField] private GameObject targetStructure;
+    public GameObject TargetStructure { get { return targetStructure; } set { targetStructure = value; } }
+
+    //Timer
+    private float CheckStateTimer = 0f;
+    private float CheckStateTimeWait = 0.5f;
+
+
     void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
@@ -62,6 +71,76 @@ public class Anken : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckStaffState();
+
+    }
+
+    private void CheckStaffState()
+    {
+        CheckStateTimer += Time.deltaTime;
+
+        if (CheckStateTimer >= CheckStateTimeWait)
+        {
+            CheckStateTimer = 0;
+            SwitchStaffState();
+        }
+    }
+
+    private void SwitchStaffState()
+    {
+        switch (state)
+        {
+            case UnitState.Walk:
+                WalkUpdate();
+                break;
+        }
+    }
+    private void WalkUpdate()
+    {
+        distance = Vector3.Distance(navAgent.destination, transform.position);
+
+        if (distance <= 3f)
+        {
+            navAgent.isStopped = true;
+            state = UnitState.Idle;
+        }
+    }
+
+    public void SetToWalk(Vector3 dest)
+    {
+        state = UnitState.Walk;
+
+        navAgent.SetDestination(dest);
+        navAgent.isStopped = false;
+    }
+
+
+    public void InitiateCharID(int i)
+    {
+        charSkinID = i;
+        charFaceID = i;
+    }
+
+    public void SetGender()
+    {
+        if (charSkinID == 1 || charSkinID == 4)
+        {
+            staffGender = Gender.female;
+        }
+    }
+    public void ChangeCharSkin()
+    {
+        for (int i = 0; i < charSkin.Length; i++)
+        {
+            if (i == charSkinID)
+            {
+                charSkin[i].SetActive(true);
+            }
+            else
+            {
+                charSkin[i].SetActive(false);
+            }
+        }
 
     }
 }

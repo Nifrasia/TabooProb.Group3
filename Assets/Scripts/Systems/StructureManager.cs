@@ -55,6 +55,13 @@ public class StructureManager : MonoBehaviour
 
     public void BeginNewBuildingPlacement(GameObject prefab)
     {
+        Debug.Log("Enter begig new build");
+        if (CheckCostToBuild(prefab) == false)
+        {
+            Debug.Log("false");
+            return;
+        }
+
         isDemolishing = false;
         isConstructing = true;
 
@@ -81,7 +88,15 @@ public class StructureManager : MonoBehaviour
         Structure s = structureObj.GetComponent<Structure>();
 
         //Add building in Office
-        //Deduct Money
+        Office.instance.AddBuilding(s);
+        //Deduct Cost
+        DeductCost(s.CostToBuildWood, s.CostToBuildStone);
+        //Cancle if there is not enough resource
+        if(CheckCostToBuild(structureObj))
+        {
+            CancelStructureMode();
+        }
+
     }
     private void CheckLeftClick()
     {
@@ -103,5 +118,28 @@ public class StructureManager : MonoBehaviour
 
         if (ghostBuilding != null)
             Destroy(ghostBuilding);
+    }
+
+    private bool CheckCostToBuild(GameObject obj)
+    {
+        int costWood = obj.GetComponent<Structure>().CostToBuildWood;
+        int costStone = obj.GetComponent<Structure>().CostToBuildStone;
+
+        if (costWood <= Office.instance.Wood && costStone <= Office.instance.Stone) {
+            Debug.Log("enough resource");
+            return true;
+        }
+        else {
+            Debug.Log("not enough resource");
+            return false; 
+        }
+           
+    }
+
+    private void DeductCost(int costWood , int costStone)
+    {
+        Office.instance.Wood -= costWood;
+        Office.instance.Stone -= costStone;
+        MainUI.instance.UpdateResourceUI();
     }
 }

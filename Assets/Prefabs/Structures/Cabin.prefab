@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2903243641161012342}
   - component: {fileID: 4689802741071207523}
+  - component: {fileID: 4544264640991276919}
   - component: {fileID: 4427140042621673888}
   - component: {fileID: 5275902139222349854}
   - component: {fileID: 3856658750087129771}
@@ -149,6 +150,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBuild: 0
   plane: {fileID: 1479454872654404197}
+--- !u!114 &4544264640991276919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8410364960144488850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812680d669119ae41a4bac62d384f3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 1
+  functional: 0
+  structureName: Cabin
+  hp: 0
+  costToBuildWood: 20
+  costToBuildStone: 0
+  id: 0
 --- !u!65 &4427140042621673888
 BoxCollider:
   m_ObjectHideFlags: 0
