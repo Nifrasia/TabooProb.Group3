@@ -16,11 +16,24 @@ public class Fisihingpod : Structure
     [SerializeField] private int maxStaffNum = 3;
     public int MaxStaffNum { get { return maxStaffNum; } set { maxStaffNum = value; } }
 
-    [SerializeField] private int dayRequired; //Day until harvest
-    [SerializeField] private int dayPassed; //Day passed since last harvest
+    [SerializeField] private int product = 40;
+    public int Product { get { return product; } }
+
+    [SerializeField] private int ProduceTime; //Day until harvest
+    //[SerializeField] private int ProduceTimePassed; //Day passed since last harvest
 
     [SerializeField] private float produceTimer = 0f;
     private int secondsPerDay = 10;
+
+
+    [SerializeField] private int throwingTime;
+    [SerializeField] private int waitingTime;
+    [SerializeField] private int catchingTime;
+
+    //private float ProduceTimer = 0f;
+    //private float ProduceTimeWait = 1f;
+
+
 
     [SerializeField] private GameObject FarmUI;
 
@@ -35,46 +48,88 @@ public class Fisihingpod : Structure
     // Update is called once per frame
     void Update()
     {
-        
+        checkState();
+    }
+
+    public void checkState()
+    {
+        Fisihingpod fisihingpod = this;
+        switch (fisihingpod.stage)
+        {
+            case FarmStage.throwing:
+                checkThrowing(); break;
+            case FarmStage.waiting:
+                checkWaiting(); break;
+            case FarmStage.catching:
+                checkCatching(); break;
+        }
+           
     }
 
     public void checkThrowing()
     {
-        if ((hp >= 100) && (stage == FarmStage.throwing))
+        produceTimer += Time.deltaTime;
+        if (produceTimer >= throwingTime)
         {
+            produceTimer = 0;
             stage = FarmStage.waiting;
-            hp = 1;
         }
 
     }
     public void checkWaiting()
     {
-        if ((hp >= 100) && (stage == FarmStage.waiting))
+        produceTimer += Time.deltaTime;
+        //dayPassed = Mathf.CeilToInt(produceTimer / secondsPerDay);
+
+        if (produceTimer >= waitingTime)
         {
-            produceTimer += Time.deltaTime;
-            dayPassed = Mathf.CeilToInt(produceTimer / secondsPerDay);
-
-            if ((functional == true) && (dayPassed >= dayRequired))
-            {
-                produceTimer = 0;
-                stage = FarmStage.catching;
-                hp = 1;
-            }
-
-
+            produceTimer = 0;
+            stage = FarmStage.catching;
         }
     }
 
         public void checkCatching()
     {
-        if ((hp >= 100) && (stage == FarmStage.catching))
+        produceTimer += Time.deltaTime;
+        if (produceTimer >= catchingTime)
         {
-            //harvest
-            Debug.Log("Harvest +1000");
-
-            hp = 1;
+            produceTimer = 0;
+            Office.instance.Fish += Product;
+            MainUI.instance.UpdateResourceUI();
             stage = FarmStage.throwing;
         }
 
     }
+
+
+    //public void HarvestResult()
+    //{
+    //    switch (structureType)
+    //    {
+    //        case StructureType.fishpond:
+    //            {
+    //                Office.instance.Fish += Product;
+    //                break;
+    //            }
+    //    }
+
+    //    MainUI.instance.UpdateResourceUI();
+    //}
+
+    //private void Working()
+    //{
+    //    hp += 3;
+    //}
+
+    //public void CheckTimeForWork()
+    //{
+    //    ProduceTimer += Time.deltaTime;
+
+    //    if (ProduceTimer >= ProduceTimeWait)
+    //    {
+    //        ProduceTimer = 0;
+    //        Working();
+    //    }
+    //}
+
 }

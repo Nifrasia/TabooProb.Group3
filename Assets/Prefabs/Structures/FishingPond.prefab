@@ -74,9 +74,12 @@ MonoBehaviour:
   id: 1
   stage: 0
   maxStaffNum: 3
-  dayRequired: 5
-  dayPassed: 0
+  product: 40
+  ProduceTime: 10
   produceTimer: 0
+  throwingTime: 2
+  waitingTime: 10
+  catchingTime: 3
   FarmUI: {fileID: 0}
   currentWorkers: []
 --- !u!65 &2968751672615595945

@@ -74,7 +74,6 @@ public class Anken : MonoBehaviour
     void Update()
     {
         CheckStaffState();
-
     }
 
     private void CheckStaffState()

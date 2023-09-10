@@ -68,8 +68,8 @@ public class Office : MonoBehaviour
     }
     public bool ToHireStaff(GameObject workerObj)
     {
-        if (money <= 0)
-            return false;
+        //if (money <= 0)
+        //    return false;
 
         workerObj.transform.parent = staffParent.transform;
 
