@@ -166,11 +166,11 @@ MonoBehaviour:
   functional: 0
   structureName: Campfire
   hp: 0
-  costToBuildWood: 20
-  costToBuildStone: 0
+  costToBuildWood: 10
+  costToBuildStone: 10
   id: 0
-  isHousing: 0
-  houseUnit: 0
+  isHousing: 1
+  houseUnit: 4
 --- !u!65 &8163158277338732616
 BoxCollider:
   m_ObjectHideFlags: 0

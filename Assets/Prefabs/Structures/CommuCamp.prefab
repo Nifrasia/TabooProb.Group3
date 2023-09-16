@@ -69,8 +69,8 @@ MonoBehaviour:
   functional: 0
   structureName: CommuCamp
   hp: 0
-  costToBuildWood: 20
-  costToBuildStone: 0
+  costToBuildWood: 40
+  costToBuildStone: 15
   id: 0
   isHousing: 0
   houseUnit: 0

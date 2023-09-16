@@ -69,9 +69,9 @@ MonoBehaviour:
   functional: 0
   structureName: FishingPond
   hp: 1
-  costToBuildWood: 20
-  costToBuildStone: 20
-  id: 1
+  costToBuildWood: 25
+  costToBuildStone: 40
+  id: 0
   isHousing: 0
   houseUnit: 0
   stage: 0

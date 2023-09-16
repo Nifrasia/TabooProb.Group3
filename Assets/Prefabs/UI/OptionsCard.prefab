@@ -391,7 +391,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7645414063971924973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7251252292596004980}
+        m_TargetAssemblyTypeName: MainUI, Assembly-CSharp
+        m_MethodName: toggleOptionsPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4782669469440436596
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +525,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6990273356255767253}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3310333944079090932}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5323870923512559527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1198,8 @@ GameObject:
   - component: {fileID: 3179486717421372747}
   - component: {fileID: 6858522691630187301}
   - component: {fileID: 4553760804470958779}
+  - component: {fileID: 7251252292596004980}
+  - component: {fileID: 3310333944079090932}
   m_Layer: 5
   m_Name: OptionsCard
   m_TagString: Untagged
@@ -1244,3 +1270,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7251252292596004980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8263227312871159846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c73245e5489395b40a83625bf905eaa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodText: {fileID: 0}
+  stoneText: {fileID: 0}
+  fishText: {fileID: 0}
+  ankenText: {fileID: 0}
+  buildPanel: {fileID: 0}
+  laborPanel: {fileID: 0}
+  fishpondPanel: {fileID: 0}
+  optionsPanel: {fileID: 8263227312871159846}
+--- !u!114 &3310333944079090932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8263227312871159846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fba7b65b74b6e84e9373327486fff16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapScene: MapScene

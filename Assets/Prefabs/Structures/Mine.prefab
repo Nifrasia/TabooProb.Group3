@@ -170,8 +170,8 @@ MonoBehaviour:
   functional: 0
   structureName: Mine
   hp: 0
-  costToBuildWood: 20
-  costToBuildStone: 20
+  costToBuildWood: 10
+  costToBuildStone: 15
   id: 0
   isHousing: 0
   houseUnit: 0

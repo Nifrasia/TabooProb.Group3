@@ -13,6 +13,8 @@ public class MainUI : MonoBehaviour
     public GameObject buildPanel;
     public GameObject laborPanel;
     public GameObject fishpondPanel;
+    public GameObject optionsPanel;
+    public GameObject settingPanel;
 
     public static MainUI instance;
 
@@ -43,7 +45,6 @@ public class MainUI : MonoBehaviour
         }
     }
 
-
     public void toggleLaborPanel()
     {
         if (!laborPanel.activeInHierarchy)
@@ -65,6 +66,30 @@ public class MainUI : MonoBehaviour
         else
         {
             fishpondPanel.SetActive(false);
+        }
+    }
+
+    public void toggleOptionsPanel()
+    {
+        if (!optionsPanel.activeInHierarchy)
+        {
+            optionsPanel.SetActive(true);
+        }
+        else
+        {
+            optionsPanel.SetActive(false);
+        }
+    }
+
+    public void toggleSettingPanel()
+    {
+        if (!settingPanel.activeInHierarchy)
+        {
+            settingPanel.SetActive(true);
+        }
+        else
+        {
+            settingPanel.SetActive(false);
         }
     }
 
