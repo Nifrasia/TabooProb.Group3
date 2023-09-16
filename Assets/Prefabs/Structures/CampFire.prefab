@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 7422335430637034261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 511667684293514984}
@@ -169,6 +169,8 @@ MonoBehaviour:
   costToBuildWood: 20
   costToBuildStone: 0
   id: 0
+  isHousing: 0
+  houseUnit: 0
 --- !u!65 &8163158277338732616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -230,12 +232,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139504745563969290, guid: 7bfb1b86b2776c240b2aacb332bd80f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139504745563969290, guid: 7bfb1b86b2776c240b2aacb332bd80f0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139504745563969290, guid: 7bfb1b86b2776c240b2aacb332bd80f0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139504745563969290, guid: 7bfb1b86b2776c240b2aacb332bd80f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9139504745563969290, guid: 7bfb1b86b2776c240b2aacb332bd80f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 9139504745563969290, guid: 7bfb1b86b2776c240b2aacb332bd80f0, type: 3}
       propertyPath: m_LocalPosition.z
