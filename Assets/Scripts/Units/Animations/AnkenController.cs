@@ -17,10 +17,10 @@ public class AnkenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckState();
+        //CheckState();
     }
 
-    private void CheckState()
+    /*private void CheckState()
     {
         DisableAll();
         switch (anken.State)
@@ -38,7 +38,7 @@ public class AnkenController : MonoBehaviour
                 anim.SetBool("isAttack", true);
                 break;
         }
-    }
+    }*/
 
     private void DisableAll()
     {

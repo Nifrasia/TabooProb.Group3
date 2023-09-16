@@ -91,7 +91,7 @@ public class Office : MonoBehaviour
 
         w.Hired = true; //Hire this worker
         w.ChangeCharSkin(); //Show 3D model
-        w.SetToWalk(rallyPosition.transform.position);
+        //w.SetToWalk(rallyPosition.transform.position);
 
         //money -= w.DailyWage;
         AddStaff(w);
