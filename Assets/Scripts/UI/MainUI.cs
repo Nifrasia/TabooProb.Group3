@@ -28,7 +28,7 @@ public class MainUI : MonoBehaviour
         woodText.text = Office.instance.Wood.ToString();
         stoneText.text = Office.instance.Stone.ToString();
         fishText.text = Office.instance.Fish.ToString();
-        ankenText.text = Office.instance.Ankens.Count.ToString();
+        ankenText.text = Office.instance.Ankens.Count.ToString() + " / " + Office.instance.UnitLimit.ToString();
     }
 
     public void toggleBuildPanel()

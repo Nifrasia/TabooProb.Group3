@@ -169,6 +169,8 @@ MonoBehaviour:
   costToBuildWood: 20
   costToBuildStone: 0
   id: 0
+  isHousing: 1
+  houseUnit: 6
 --- !u!65 &4427140042621673888
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class StructureManager : MonoBehaviour
 {
@@ -102,6 +103,8 @@ public class StructureManager : MonoBehaviour
         {
             if (isConstructing)
                 PlaceBuilding(); //Real Construction
+            else
+                CheckOpenPanel();
         }
     }
 
@@ -138,4 +141,35 @@ public class StructureManager : MonoBehaviour
         Office.instance.Stone -= costStone;
         MainUI.instance.UpdateResourceUI();
     }
+
+    private void CheckOpenPanel()
+    {
+        
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        //if we left click something
+        if (Physics.Raycast(ray, out hit, 1000))
+        {
+            
+            //Mouse over UI
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            CurStructure = hit.collider.gameObject;
+
+            switch (CurStructure.GetComponent<Structure>().StructureName) //hit.collider.tag
+            {
+                case "CommuCamp": // if we click Object with Farm tag 
+                    OpenLaborMarket();
+                    break;
+            }
+        }
+    }
+
+    public void OpenLaborMarket()
+    {
+        MainUI.instance.toggleLaborPanel();
+    }
+
 }
