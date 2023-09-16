@@ -15,6 +15,11 @@ public class MainUI : MonoBehaviour
     public GameObject fishpondPanel;
     public GameObject optionsPanel;
     public GameObject settingPanel;
+    public GameObject CommuCampPanel;
+    public GameObject LoggerCampPanel;
+    public GameObject CabinPanel;
+    public GameObject MinePanel;
+    public GameObject CampFirePanel;
 
     public static MainUI instance;
 
@@ -93,4 +98,61 @@ public class MainUI : MonoBehaviour
         }
     }
 
+    public void toggleCommuCampPanel()
+    {
+        if (!CommuCampPanel.activeInHierarchy)
+        {
+            CommuCampPanel.SetActive(true);
+        }
+        else
+        {
+            CommuCampPanel.SetActive(false);
+        }
+    }
+
+    public void toggleLoggerCampPanel()
+    {
+        if (!LoggerCampPanel.activeInHierarchy)
+        {
+            LoggerCampPanel.SetActive(true);
+        }
+        else
+        {
+            LoggerCampPanel.SetActive(false);
+        }
+    }
+    public void toggleMinePanel()
+    {
+        if (!MinePanel.activeInHierarchy)
+        {
+            MinePanel.SetActive(true);
+        }
+        else
+        {
+            MinePanel.SetActive(false);
+        }
+    }
+    public void toggleCabinPanel()
+    {
+        if (!CabinPanel.activeInHierarchy)
+        {
+            CabinPanel.SetActive(true);
+        }
+        else
+        {
+            CabinPanel.SetActive(false);
+        }
+    }
+
+    public void toggleCampFirePanel()
+    {
+        if (!CampFirePanel.activeInHierarchy)
+        {
+            CampFirePanel.SetActive(true);
+        }
+        else
+        {
+            CampFirePanel.SetActive(false);
+        }
+    }
 }

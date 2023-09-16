@@ -56,7 +56,7 @@ public class StructureManager : MonoBehaviour
 
     public void BeginNewBuildingPlacement(GameObject prefab)
     {
-        if (CheckCostToBuild(prefab) == false)
+        if (CheckCostToBuild(prefab) == true)
         {
             return;
         }
@@ -85,13 +85,13 @@ public class StructureManager : MonoBehaviour
                                                buildingParent.transform);
 
         Structure s = structureObj.GetComponent<Structure>();
-
+        
         //Add building in Office
         Office.instance.AddBuilding(s);
         //Deduct Cost
         DeductCost(s.CostToBuildWood, s.CostToBuildStone);
         //Cancle if there is not enough resource
-        if(CheckCostToBuild(structureObj))
+        if (CheckCostToBuild(structureObj))
         {
             CancelStructureMode();
         }
@@ -126,7 +126,7 @@ public class StructureManager : MonoBehaviour
         int costWood = obj.GetComponent<Structure>().CostToBuildWood;
         int costStone = obj.GetComponent<Structure>().CostToBuildStone;
 
-        if (costWood <= Office.instance.Wood && costStone <= Office.instance.Stone) {
+        if ((Office.instance.Wood - costWood) < 0 || (Office.instance.Stone - costStone) < 0) {
             return true;
         }
         else {
@@ -161,29 +161,37 @@ public class StructureManager : MonoBehaviour
             switch (hit.collider.tag) //hit.collider.tag
             {
                 case "CommuCamp": // if we click Object with Farm tag 
-                    OpenLaborMarket();
+                    MainUI.instance.toggleCommuCampPanel();
                     break;
                 case "FishingPond":
-                    OpenFishpondPanel();
-                    break;   
+                    MainUI.instance.toggleFishpondPanel();
+                    break;
+                case "Cabin":
+                    MainUI.instance.toggleCabinPanel();
+                    break;
+                case "CampFire":
+                    MainUI.instance.toggleCampFirePanel();
+                    break;
+                case "LoggerCamp":
+                    MainUI.instance.toggleLoggerCampPanel();
+                    break;
+                case "Mine":
+                    MainUI.instance.toggleMinePanel();
+                    break;
+
             }
         }
     }
-     
-    public void OpenLaborMarket()
+    
+    public void CallStafftoFishingPound()
     {
-        MainUI.instance.toggleLaborPanel();
-    }
-    public void OpenFishpondPanel()
-    {
-        MainUI.instance.toggleFishpondPanel();
+        Office.instance.SendStaffToFishingPound(CurStructure);
+        MainUI.instance.UpdateResourceUI();
     }
 
-
-
-    public void CallStaff()
+    public void CallStafftoMine()
     {
-        Office.instance.SendStaff(CurStructure);
+        Office.instance.SendStaffToMine(CurStructure);
         MainUI.instance.UpdateResourceUI();
     }
 }

@@ -23,8 +23,6 @@ public class Fishingpond : Structure
     //[SerializeField] private int ProduceTimePassed; //Day passed since last harvest
 
     [SerializeField] private float produceTimer = 0f;
-    private int secondsPerDay = 10;
-
 
     [SerializeField] private int throwingTime;
     [SerializeField] private int waitingTime;

@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 3654574704608363274}
   m_Layer: 6
   m_Name: Mine
-  m_TagString: Building
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +175,11 @@ MonoBehaviour:
   id: 0
   isHousing: 0
   houseUnit: 0
+  maxStaffNum: 3
+  produceTimer: 0
+  produceTime: 10
+  produceRate: 10
+  currentWorkers: []
 --- !u!65 &3652607554730765867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -186,8 +191,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4, y: 2, z: 4}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!54 &782831535235387990
 Rigidbody:
   m_ObjectHideFlags: 0

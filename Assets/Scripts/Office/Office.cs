@@ -135,7 +135,7 @@ public class Office : MonoBehaviour
         }
     }
 
-    public void SendStaff(GameObject target)
+    public void SendStaffToFishingPound(GameObject target)
     {
         Fishingpond f = target.GetComponent<Fishingpond>();
 
@@ -167,6 +167,41 @@ public class Office : MonoBehaviour
             if (n >= staffNeed)
                 break;
          }
+
+        UpdateAvailStaff();
+    }
+    public void SendStaffToMine(GameObject target)
+    {
+        Mine f = target.GetComponent<Mine>();
+
+        int staffNeed = f.MaxStaffNum - f.CurrentWorkers.Count;
+        if (staffNeed <= 0)
+            return;
+
+        UpdateAvailStaff();
+
+        if (staffNeed > availAnken)
+            staffNeed = availAnken;
+
+        int n = 0; //number of Staff sent
+
+        for (int i = 0; i < ankens.Count; i++)
+        {
+            if (ankens[i].TargetStructure == null)
+            {
+                Anken w = ankens[i].GetComponent<Anken>();
+                ankens[i].TargetStructure = target;
+                Debug.Log(target);
+                Debug.Log(target.transform.position);
+                ankens[i].SetToWalk(target.transform.position);
+                f.AddStaffToMine(w);
+                n++;
+
+            }
+
+            if (n >= staffNeed)
+                break;
+        }
 
         UpdateAvailStaff();
     }
