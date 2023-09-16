@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479454872654404197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 2.5}
+  m_LocalPosition: {x: -0.0454, y: 0.1, z: -0.0144}
+  m_LocalScale: {x: 1.7345362, y: 1, z: 1.7247319}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2903243641161012342}
@@ -170,7 +170,7 @@ MonoBehaviour:
   costToBuildStone: 50
   id: 0
   isHousing: 1
-  houseUnit: 4
+  houseUnit: 2
 --- !u!65 &4427140042621673888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2423779497032424775, guid: de8a98574c0188a4bb8a31711654e824, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 2423779497032424775, guid: de8a98574c0188a4bb8a31711654e824, type: 3}
       propertyPath: m_LocalRotation.w

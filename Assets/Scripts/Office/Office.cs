@@ -40,7 +40,7 @@ public class Office : MonoBehaviour
 
 
     [Header("Building")]
-    [SerializeField] private int unitLimit = 3; //Initial unit limit
+    [SerializeField] private int unitLimit = 4; //Initial unit limit
     public int UnitLimit { get { return unitLimit; } }
 
 
