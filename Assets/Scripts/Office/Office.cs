@@ -17,10 +17,10 @@ public class Office : MonoBehaviour
     public int Fish { get { return fish; } set { fish = value; } }
 
     [SerializeField] private int wood;
-    public int Wood { get {  return wood; } set {  wood = value; } }
+    public int Wood { get { return wood; } set { wood = value; } }
 
     [SerializeField] private int stone;
-    public int Stone { get {  return stone; } set { stone = value; } }
+    public int Stone { get { return stone; } set { stone = value; } }
 
 
 
@@ -79,7 +79,7 @@ public class Office : MonoBehaviour
         //if (money <= 0)
         //    return false;
 
-        if(ankens.Count >= unitLimit)
+        if (ankens.Count >= unitLimit)
         {
             return false;
         }
@@ -91,7 +91,7 @@ public class Office : MonoBehaviour
 
         w.Hired = true; //Hire this worker
         w.ChangeCharSkin(); //Show 3D model
-        //w.SetToWalk(rallyPosition.transform.position);
+        w.SetToWalk(rallyPosition.transform.position);
 
         //money -= w.DailyWage;
         AddStaff(w);
@@ -124,5 +124,50 @@ public class Office : MonoBehaviour
             unitLimit = 0;
     }
 
+    public void UpdateAvailStaff()
+    {
+        availAnken = 0;
 
+        foreach (Anken w in ankens)
+        {
+            if (w.TargetStructure == null) //there is no job to do
+                availAnken++;
+        }
+    }
+
+    public void SendStaff(GameObject target)
+    {
+        Fishingpond f = target.GetComponent<Fishingpond>();
+
+        int staffNeed = f.MaxStaffNum - f.CurrentWorkers.Count;
+        if (staffNeed <= 0)
+            return;
+
+        UpdateAvailStaff();
+
+        if (staffNeed > availAnken)
+            staffNeed = availAnken;
+
+        int n = 0; //number of Staff sent
+
+        for (int i = 0; i < ankens.Count; i++)
+        {
+            if (ankens[i].TargetStructure == null)
+            {
+                Anken w = ankens[i].GetComponent<Anken>();
+                ankens[i].TargetStructure = target;
+                Debug.Log(target);
+                Debug.Log(target.transform.position);
+                ankens[i].SetToWalk(target.transform.position);
+                f.AddStaffToFarm(w);
+                n++;
+
+            }
+           
+            if (n >= staffNeed)
+                break;
+         }
+
+        UpdateAvailStaff();
+    }
 }

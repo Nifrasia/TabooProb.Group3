@@ -12,6 +12,7 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TMP_Text ankenText;
     public GameObject buildPanel;
     public GameObject laborPanel;
+    public GameObject fishpondPanel;
 
     public static MainUI instance;
 
@@ -52,6 +53,18 @@ public class MainUI : MonoBehaviour
         else
         {
             laborPanel.SetActive(false);
+        }
+    }
+
+    public void toggleFishpondPanel()
+    {
+        if(!fishpondPanel.activeInHierarchy)
+        {
+            fishpondPanel.SetActive(true);
+        }
+        else
+        {
+            fishpondPanel.SetActive(false);
         }
     }
 

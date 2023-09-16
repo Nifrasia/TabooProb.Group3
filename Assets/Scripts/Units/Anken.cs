@@ -11,7 +11,7 @@ public enum Gender
     female
 }
 
-public class Anken : MonoBehaviour
+public class Anken : Unit
 {
 
     private int id;
@@ -41,19 +41,7 @@ public class Anken : MonoBehaviour
     [SerializeField] private bool hired = false;
     public bool Hired { get { return hired; } set { hired = value; } }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //CheckStaffState();
-    }
-   
-
+  
     public void InitiateCharID(int i)
     {
         charSkinID = i;

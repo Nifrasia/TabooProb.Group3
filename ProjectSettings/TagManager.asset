@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Building
   - CommuCamp
+  - Cabin
+  - CampFire
+  - FishingPond
+  - LoggerCamp
+  - Mine
   layers:
   - Default
   - TransparentFX

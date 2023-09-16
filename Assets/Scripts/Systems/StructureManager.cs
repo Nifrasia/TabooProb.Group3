@@ -158,18 +158,32 @@ public class StructureManager : MonoBehaviour
 
             CurStructure = hit.collider.gameObject;
 
-            switch (CurStructure.GetComponent<Structure>().StructureName) //hit.collider.tag
+            switch (hit.collider.tag) //hit.collider.tag
             {
                 case "CommuCamp": // if we click Object with Farm tag 
                     OpenLaborMarket();
                     break;
+                case "FishingPond":
+                    OpenFishpondPanel();
+                    break;   
             }
         }
     }
-
+     
     public void OpenLaborMarket()
     {
         MainUI.instance.toggleLaborPanel();
     }
+    public void OpenFishpondPanel()
+    {
+        MainUI.instance.toggleFishpondPanel();
+    }
 
+
+
+    public void CallStaff()
+    {
+        Office.instance.SendStaff(CurStructure);
+        MainUI.instance.UpdateResourceUI();
+    }
 }

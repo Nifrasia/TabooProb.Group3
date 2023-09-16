@@ -8,7 +8,7 @@ public enum FarmStage
     waiting,
     catching,
 }
-public class Fisihingpod : Structure
+public class Fishingpond : Structure
 {
     // Start is called before the first frame update
     [SerializeField] private FarmStage stage = FarmStage.throwing;
@@ -53,8 +53,7 @@ public class Fisihingpod : Structure
 
     public void checkState()
     {
-        Fisihingpod fisihingpod = this;
-        switch (fisihingpod.stage)
+        switch (stage)
         {
             case FarmStage.throwing:
                 checkThrowing(); break;
@@ -101,35 +100,11 @@ public class Fisihingpod : Structure
 
     }
 
+    public void AddStaffToFarm(Anken w)
+    {
+        currentWorkers.Add(w);
+    }
 
-    //public void HarvestResult()
-    //{
-    //    switch (structureType)
-    //    {
-    //        case StructureType.fishpond:
-    //            {
-    //                Office.instance.Fish += Product;
-    //                break;
-    //            }
-    //    }
 
-    //    MainUI.instance.UpdateResourceUI();
-    //}
-
-    //private void Working()
-    //{
-    //    hp += 3;
-    //}
-
-    //public void CheckTimeForWork()
-    //{
-    //    ProduceTimer += Time.deltaTime;
-
-    //    if (ProduceTimer >= ProduceTimeWait)
-    //    {
-    //        ProduceTimer = 0;
-    //        Working();
-    //    }
-    //}
 
 }

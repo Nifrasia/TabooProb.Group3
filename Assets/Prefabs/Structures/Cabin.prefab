@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 3856658750087129771}
   m_Layer: 6
   m_Name: Cabin
-  m_TagString: Building
+  m_TagString: Cabin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

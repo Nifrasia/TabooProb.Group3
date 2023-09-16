@@ -47,6 +47,11 @@ public abstract class Unit : MonoBehaviour
     {
         navAgent = GetComponent<NavMeshAgent>();
     }
+    void Start()
+    {
+
+    }
+
     void Update()
     {
         CheckStaffState();
@@ -76,9 +81,10 @@ public abstract class Unit : MonoBehaviour
     private void WalkUpdate()
     {
         distance = Vector3.Distance(navAgent.destination, transform.position);
-
+        Debug.Log(distance);
         if (distance <= 3f)
         {
+            Debug.Log("enter disctance <= 3f");
             navAgent.isStopped = true;
             state = UnitState.Idle;
         }
@@ -86,8 +92,8 @@ public abstract class Unit : MonoBehaviour
 
     public void SetToWalk(Vector3 dest)
     {
+        Debug.Log(dest);
         state = UnitState.Walk;
-
         navAgent.SetDestination(dest);
         navAgent.isStopped = false;
     }

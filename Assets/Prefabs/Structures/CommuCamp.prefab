@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7723973930075131820}
   m_Layer: 6
   m_Name: CommuCamp
-  m_TagString: Building
+  m_TagString: CommuCamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,6 +72,8 @@ MonoBehaviour:
   costToBuildWood: 20
   costToBuildStone: 0
   id: 0
+  isHousing: 0
+  houseUnit: 0
 --- !u!65 &2215311615919987318
 BoxCollider:
   m_ObjectHideFlags: 0

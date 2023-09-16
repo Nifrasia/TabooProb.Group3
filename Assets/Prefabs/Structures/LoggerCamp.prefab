@@ -167,10 +167,12 @@ MonoBehaviour:
   structureType: 1
   functional: 0
   structureName: LoggerCamp
-  hp: 0
-  costToBuildWood: 0
-  costToBuildStone: 0
-  id: 0
+  hp: 100
+  costToBuildWood: 20
+  costToBuildStone: 20
+  id: 20
+  isHousing: 0
+  houseUnit: 0
 --- !u!65 &1429752549253504697
 BoxCollider:
   m_ObjectHideFlags: 0
