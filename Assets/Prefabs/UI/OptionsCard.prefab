@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Setting
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
   m_sharedMaterial: {fileID: -5409117482138604993, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 7645414063971924973}
   - component: {fileID: 8790511918036211491}
   m_Layer: 5
-  m_Name: ButtonVideo
+  m_Name: ButtonResume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -405,12 +405,12 @@ GameObject:
   - component: {fileID: 6990273356255767253}
   - component: {fileID: 5630932040186487885}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: ButtonQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5914164787796872990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Video
+  m_text: Resume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
   m_sharedMaterial: {fileID: -5409117482138604993, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Audio
+  m_text: Save
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
   m_sharedMaterial: {fileID: -5409117482138604993, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 3569501834349781769}
   - component: {fileID: 3499612370286602659}
   m_Layer: 5
-  m_Name: ButtonAudio
+  m_Name: ButtonSave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,7 +919,7 @@ GameObject:
   - component: {fileID: 8470148450028960379}
   - component: {fileID: 4028704633448622659}
   m_Layer: 5
-  m_Name: ButtonLanguage
+  m_Name: ButtonSetting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1094,7 +1094,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Language
+  m_text: Setting
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
   m_sharedMaterial: {fileID: -5409117482138604993, guid: 127356f3f7ad93442b3f0ea6a86ab90a, type: 2}
@@ -1175,7 +1175,7 @@ GameObject:
   - component: {fileID: 6858522691630187301}
   - component: {fileID: 4553760804470958779}
   m_Layer: 5
-  m_Name: SettingCard
+  m_Name: OptionsCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
