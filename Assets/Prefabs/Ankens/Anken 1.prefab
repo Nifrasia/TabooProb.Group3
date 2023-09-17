@@ -97,7 +97,11 @@ MonoBehaviour:
   hunger: 220
   charFaceID: 0
   charFacePic:
-  - {fileID: 21300000, guid: d1f94eb541d98c94c9e0a776707e9c7c, type: 3}
+  - {fileID: 21300000, guid: b4629bba9319b2a48ae289fc28f52add, type: 3}
+  - {fileID: 21300000, guid: 98a03302f7d8d504ebbd06b0c9eba311, type: 3}
+  - {fileID: 21300000, guid: ae93b6ba5e67cf949a52ff2ca01da4df, type: 3}
+  - {fileID: 21300000, guid: a3ffd7474e4be8f4abfb515e371ba939, type: 3}
+  - {fileID: 21300000, guid: 3ff6b5f65fdd1a441bd0535d8ab0843e, type: 3}
   staffName: 
   staffGender: 0
   hired: 0

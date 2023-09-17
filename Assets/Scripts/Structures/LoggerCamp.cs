@@ -47,7 +47,7 @@ public class LoggerCamp : Structure
         }
     }
 
-    public void AddStaffToLoggerCamp(Anken w)
+    public void AddStaffToCutTree(Anken w)
     {
         currentWorkers.Add(w);
     }

@@ -221,7 +221,7 @@ public class Office : MonoBehaviour
             {
                 Anken w = ankens[i].GetComponent<Anken>();
 
-                //ankens[i].TargetStructure = warehouse;
+                ankens[i].TargetStructure = warehouse;
                 ankens[i].TargetForest = forest;
                 w.StartCutting(forest);
                 n++;
@@ -258,7 +258,7 @@ public class Office : MonoBehaviour
                 Debug.Log(target);
                 Debug.Log(target.transform.position);
                 ankens[i].SetToWalk(target.transform.position);
-                f.AddStaffToLoggerCamp(w);
+                f.AddStaffToCutTree(w);
                 n++;
 
             }

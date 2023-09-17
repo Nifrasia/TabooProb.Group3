@@ -149,7 +149,7 @@ public class Anken : Unit
         if (targetForest == null)
         {
             GameObject newForest = FindingTarget.CheckForNearestForest(targetStructure.transform.position,
-                                                                        100f,
+                                                                        10000f,
                                                                         "Forest");
             StartCutting(newForest);
         }
@@ -172,7 +172,7 @@ public class Anken : Unit
         else
         {
             GameObject newMine = FindingTarget.CheckForNearestForest(targetStructure.transform.position,
-                                                                        100f,
+                                                                        10000f,
                                                                         "Forest");
             targetForest = newMine;
             StartCutting(newMine);
@@ -241,7 +241,7 @@ public class Anken : Unit
         else
         {
             GameObject newForest = FindingTarget.CheckForNearestForest(targetStructure.transform.position,
-                                                                    100f,
+                                                                    10000f,
                                                                     "Mine");
             if (newForest != null)
                 StartCutting(newForest);
