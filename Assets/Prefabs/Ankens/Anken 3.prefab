@@ -87,6 +87,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Anken 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1671135878655126251, guid: 54149046c572a7d4a8ee22a0f384a88d, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 19f899437f30c8847a246eaea435ceb7, type: 3}
+    - target: {fileID: 1671135878655126251, guid: 54149046c572a7d4a8ee22a0f384a88d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 24923253fd33c404ea28548acd2e92b0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54149046c572a7d4a8ee22a0f384a88d, type: 3}
 --- !u!4 &2962871462895038293 stripped

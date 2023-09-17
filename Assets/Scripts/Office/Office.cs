@@ -110,7 +110,7 @@ public class Office : MonoBehaviour
 
     public void CheckHousing()
     {
-        unitLimit = 3; //starting unit Limit
+        unitLimit = 4; //starting unit Limit
 
         foreach (Structure s in structures)
         {
@@ -206,7 +206,7 @@ public class Office : MonoBehaviour
         UpdateAvailStaff();
     }
 
-    public void SendWorkerToForest(GameObject forest, GameObject warehouse)
+    public void SendStaffToForest(GameObject forest, GameObject warehouse)
     {
         UpdateAvailStaff();
 
@@ -221,13 +221,49 @@ public class Office : MonoBehaviour
             {
                 Anken w = ankens[i].GetComponent<Anken>();
 
-                ankens[i].TargetStructure = warehouse;
+                //ankens[i].TargetStructure = warehouse;
                 ankens[i].TargetForest = forest;
                 w.StartCutting(forest);
                 n++;
             }
 
             if (n >= 1)
+                break;
+        }
+
+        UpdateAvailStaff();
+    }
+
+    public void SendStaffToCutTree(GameObject target)
+    {
+        LoggerCamp f = target.GetComponent<LoggerCamp>();
+
+        int staffNeed = f.MaxStaffNum - f.CurrentWorkers.Count;
+        if (staffNeed <= 0)
+            return;
+
+        UpdateAvailStaff();
+
+        if (staffNeed > availAnken)
+            staffNeed = availAnken;
+
+        int n = 0; //number of Staff sent
+
+        for (int i = 0; i < ankens.Count; i++)
+        {
+            if (ankens[i].TargetStructure == null)
+            {
+                Anken w = ankens[i].GetComponent<Anken>();
+                ankens[i].TargetStructure = target;
+                Debug.Log(target);
+                Debug.Log(target.transform.position);
+                ankens[i].SetToWalk(target.transform.position);
+                f.AddStaffToLoggerCamp(w);
+                n++;
+
+            }
+
+            if (n >= staffNeed)
                 break;
         }
 

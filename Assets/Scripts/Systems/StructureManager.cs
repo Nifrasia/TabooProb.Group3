@@ -195,12 +195,18 @@ public class StructureManager : MonoBehaviour
         MainUI.instance.UpdateResourceUI();
     }
 
-    public void CallStafftoForest() //Call Worker in Warehouse Panel
+    public void CallStafftoCutTree()
     {
-        GameObject forest = FindingTarget.CheckForNearestForest(CurStructure.transform.position,
-                                                                        100f,
-                                                                        "Forest");
-        Office.instance.SendWorkerToForest(forest, CurStructure);
+        Office.instance.SendStaffToCutTree(CurStructure);
         MainUI.instance.UpdateResourceUI();
     }
+
+    /*public void CallStafftoForest() //Call Worker in Warehouse Panel
+    {
+        GameObject forest = FindingTarget.CheckForNearestForest(CurStructure.transform.position,
+                                                                        10000f,
+                                                                        "Forest");
+        Office.instance.SendStaffToForest(forest, CurStructure);
+        MainUI.instance.UpdateResourceUI();
+    }*/
 }
