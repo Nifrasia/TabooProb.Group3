@@ -205,4 +205,32 @@ public class Office : MonoBehaviour
 
         UpdateAvailStaff();
     }
+
+    public void SendWorkerToForest(GameObject forest, GameObject warehouse)
+    {
+        UpdateAvailStaff();
+
+        if (forest == null || availAnken <= 0)
+            return;
+
+        int n = 0; //number of Worker sent
+
+        for (int i = 0; i < ankens.Count; i++)
+        {
+            if (ankens[i].TargetStructure == null)
+            {
+                Anken w = ankens[i].GetComponent<Anken>();
+
+                ankens[i].TargetStructure = warehouse;
+                ankens[i].TargetForest = forest;
+                w.StartCutting(forest);
+                n++;
+            }
+
+            if (n >= 1)
+                break;
+        }
+
+        UpdateAvailStaff();
+    }
 }
