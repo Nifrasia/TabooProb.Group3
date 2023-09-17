@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -206,6 +207,7 @@ public class StructureManager : MonoBehaviour
         GameObject forest = FindingTarget.CheckForNearestForest(CurStructure.transform.position,
                                                                         10000f,
                                                                         "Forest");
+        Debug.Log(forest);
         Office.instance.SendStaffToForest(forest, CurStructure);
         MainUI.instance.UpdateResourceUI();
     }

@@ -126,19 +126,21 @@ public class Anken : Unit
     }
 
 
-    #region Mining
-    public void StartCutting(GameObject mine)
+    #region Wodd Cutting
+    public void StartCutting(GameObject forest)
     {
-        if (mine == null)
+        if (forest == null)
         {
+            Debug.Log("check forest = null");
             targetForest = null;
             SetUnitState(UnitState.MovetoDeliver);
             navAgent.SetDestination(TargetStructure.transform.position);
         }
         else
         {
+            Debug.Log("check forest move to cut tree");
             SetUnitState (UnitState.MovetoCutTree);
-            navAgent.SetDestination(mine.transform.position);
+            navAgent.SetDestination(forest.transform.position);
         }
         navAgent.isStopped = false;
     }
@@ -157,7 +159,7 @@ public class Anken : Unit
         //DisableAllTools();
         //Equip PickAxe
 
-        if (Vector3.Distance(transform.position, navAgent.destination) <= 1f)
+        if (Vector3.Distance(transform.position, navAgent.destination) <= 10f)
         {
             LookAt(navAgent.destination);
             SetUnitState(UnitState.CutTree);
@@ -213,7 +215,7 @@ public class Anken : Unit
         //DisableAllTools();
         //Equip Load
 
-        if (Vector3.Distance(transform.position, targetStructure.transform.position) <= 5f)
+        if (Vector3.Distance(transform.position, targetStructure.transform.position) <= 20f)
         {
             SetUnitState(UnitState.Deliver);
             navAgent.isStopped = true;
@@ -230,7 +232,7 @@ public class Anken : Unit
         }
 
         // Deliver the resource to player
-        Office.instance.Stone += curAmount;
+        Office.instance.Wood += curAmount;
         curAmount = 0;
 
         // Go back to mining
@@ -242,7 +244,7 @@ public class Anken : Unit
         {
             GameObject newForest = FindingTarget.CheckForNearestForest(targetStructure.transform.position,
                                                                     10000f,
-                                                                    "Mine");
+                                                                    "Forest");
             if (newForest != null)
                 StartCutting(newForest);
             else

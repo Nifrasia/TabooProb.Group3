@@ -91,10 +91,8 @@ public abstract class Unit : MonoBehaviour
     private void WalkUpdate()
     {
         distance = Vector3.Distance(navAgent.destination, transform.position);
-        Debug.Log(distance);
         if (distance <= 3f)
         {
-            Debug.Log("enter disctance <= 3f");
             navAgent.isStopped = true;
             state = UnitState.Idle;
         }
