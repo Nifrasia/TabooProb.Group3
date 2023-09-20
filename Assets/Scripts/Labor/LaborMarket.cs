@@ -80,7 +80,7 @@ public class LaborMarket : MonoBehaviour
 
         AnkenCard card = staffCardObj.GetComponent<AnkenCard>();
         card.UpdateID(w.ID);
-        //card.UpdateProfilePic(w.charFacePic[w.CharFaceID]);
+        card.UpdateProfilePic(w.charFacePic[w.CharFaceID]);
         card.UpdateProfileName(w.StaffName);
 
         return staffCardObj;

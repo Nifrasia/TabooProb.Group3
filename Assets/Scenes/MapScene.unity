@@ -1924,7 +1924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46099997, g: 0.9910168, b: 1, a: 1}
+  m_Color: {r: 0.8352941, g: 0.7254902, b: 0.5882353, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4239,6 +4239,10 @@ PrefabInstance:
     - target: {fileID: 1388612706645404, guid: 548bedb53320de946a3d6ca14d0295ee, type: 3}
       propertyPath: m_Name
       value: SM_Env_Pond_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388612706645404, guid: 548bedb53320de946a3d6ca14d0295ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4407853678248076, guid: 548bedb53320de946a3d6ca14d0295ee, type: 3}
       propertyPath: m_RootOrder
@@ -8469,19 +8473,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 746194880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 387990676}
-        m_TargetAssemblyTypeName: StructureManager, Assembly-CSharp
-        m_MethodName: CallStafftoMine
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &746194880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13092,7 +13084,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 387990676}
         m_TargetAssemblyTypeName: StructureManager, Assembly-CSharp
-        m_MethodName: CallStafftoMine
+        m_MethodName: CallStafftoFishingPound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15807,7 +15799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4627451, g: 0.99215686, b: 1, a: 1}
+  m_Color: {r: 0.83699995, g: 0.72697526, b: 0.587574, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21989,7 +21981,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 387990676}
         m_TargetAssemblyTypeName: StructureManager, Assembly-CSharp
-        m_MethodName: CallStafftoMine
+        m_MethodName: CallStafftoForest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23778,19 +23770,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2008789934}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 387990676}
-        m_TargetAssemblyTypeName: StructureManager, Assembly-CSharp
-        m_MethodName: CallStafftoMine
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2008789934
 MonoBehaviour:
   m_ObjectHideFlags: 0
