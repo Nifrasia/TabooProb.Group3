@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Office : MonoBehaviour
 {
-
     [SerializeField] private int money;
     public int Money { get { return money; } set { money = value; } }
 
@@ -22,14 +21,11 @@ public class Office : MonoBehaviour
     [SerializeField] private int stone;
     public int Stone { get { return stone; } set { stone = value; } }
 
-
-
     [SerializeField] private int availAnken;
     public int AvailStaff { get { return availAnken; } set { availAnken = value; } }
 
     [SerializeField] private List<Structure> structures = new List<Structure>();
     public List<Structure> Structures { get { return structures; } }
-
 
     [SerializeField] private int dailyCostWages;
 
@@ -37,12 +33,9 @@ public class Office : MonoBehaviour
     [SerializeField] private GameObject spawnPosition;
     [SerializeField] private GameObject rallyPosition;
 
-
-
     [Header("Building")]
     [SerializeField] private int unitLimit = 4; //Initial unit limit
     public int UnitLimit { get { return unitLimit; } }
-
 
     public static Office instance;
 
@@ -50,13 +43,11 @@ public class Office : MonoBehaviour
     {
         instance = this;
     }
-
     // Start is called before the first frame update
     void Start()
     {
 
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -67,7 +58,6 @@ public class Office : MonoBehaviour
         structures.Add(s);
         CheckHousing();
     }
-
     public void RemoveBuilding(Structure s)
     {
         structures.Remove(s);
@@ -83,7 +73,6 @@ public class Office : MonoBehaviour
         {
             return false;
         }
-
 
         workerObj.transform.parent = staffParent.transform;
 
@@ -101,13 +90,11 @@ public class Office : MonoBehaviour
 
         return true;
     }
-
     public void AddStaff(Anken w)
     {
         ankens.Add(w);
         //dailyCostWages += w.DailyWage;
     }
-
     public void CheckHousing()
     {
         unitLimit = 4; //starting unit Limit
@@ -123,7 +110,6 @@ public class Office : MonoBehaviour
         else if (unitLimit < 0)
             unitLimit = 0;
     }
-
     public void UpdateAvailStaff()
     {
         availAnken = 0;
@@ -134,7 +120,6 @@ public class Office : MonoBehaviour
                 availAnken++;
         }
     }
-
     public void SendStaffToFishingPound(GameObject target)
     {
         Fishingpond f = target.GetComponent<Fishingpond>();
@@ -205,7 +190,6 @@ public class Office : MonoBehaviour
 
         UpdateAvailStaff();
     }
-
     public void SendStaffToForest(GameObject forest, GameObject warehouse)
     {
         UpdateAvailStaff();
@@ -233,7 +217,6 @@ public class Office : MonoBehaviour
 
         UpdateAvailStaff();
     }
-
     public void SendStaffToCutTree(GameObject target)
     {
         LoggerCamp f = target.GetComponent<LoggerCamp>();

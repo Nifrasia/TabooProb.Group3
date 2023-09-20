@@ -3676,6 +3676,7 @@ GameObject:
   - component: {fileID: 387990678}
   - component: {fileID: 387990677}
   - component: {fileID: 387990676}
+  - component: {fileID: 387990679}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3745,6 +3746,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 426d2182417dcde4ba6be8ff3ea1caf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &387990679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387990674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeaefd3cdcaa5de418ed8a6f5f3884ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &389491558
@@ -4716,9 +4729,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 387990676}
-        m_TargetAssemblyTypeName: StructureManager, Assembly-CSharp
-        m_MethodName: CallStaff
+      - m_Target: {fileID: 387990679}
+        m_TargetAssemblyTypeName: Destroy, Assembly-CSharp
+        m_MethodName: Demolish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

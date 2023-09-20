@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class StructureManager : MonoBehaviour
 {
@@ -51,6 +52,8 @@ public class StructureManager : MonoBehaviour
         {
             gridPlane.SetActive(false);
         }
+
+        //DemolishOnClick();
 
         CheckLeftClick();
     }
@@ -109,7 +112,6 @@ public class StructureManager : MonoBehaviour
         }
     }
 
-
     //cancle building
     private void CancelStructureMode()
     {
@@ -161,7 +163,7 @@ public class StructureManager : MonoBehaviour
 
             switch (hit.collider.tag) //hit.collider.tag
             {
-                case "CommuCamp": // if we click Object with Farm tag 
+                case "CommuCamp": // if we click Object with tag 
                     MainUI.instance.toggleCommuCampPanel();
                     break;
                 case "FishingPond":
@@ -183,7 +185,15 @@ public class StructureManager : MonoBehaviour
             }
         }
     }
-    
+
+    /*public void DemolishOnClick()
+    {
+        Structure s = Office.instance.Structures[]; 
+
+        Office.instance.RemoveBuilding(s);
+        MainUI.instance.UpdateResourceUI();
+    }*/
+
     public void CallStafftoFishingPound()
     {
         Office.instance.SendStaffToFishingPound(CurStructure);
