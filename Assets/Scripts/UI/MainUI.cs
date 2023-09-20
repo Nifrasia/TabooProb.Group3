@@ -13,16 +13,16 @@ public class MainUI : MonoBehaviour
 
     [SerializeField] private TMP_Text dayText;
 
-    public GameObject buildPanel;
-    public GameObject laborPanel;
-    public GameObject fishpondPanel;
     public GameObject optionsPanel;
     public GameObject settingPanel;
-    public GameObject CommuCampPanel;
-    public GameObject LoggerCampPanel;
-    public GameObject CabinPanel;
-    public GameObject MinePanel;
-    public GameObject CampFirePanel;
+    public GameObject buildPanel;
+    public GameObject laborPanel;
+    public GameObject campFirePanel;
+    public GameObject commuCampPanel;
+    public GameObject fishpondPanel;
+    public GameObject loggerCampPanel;
+    public GameObject minePanel;
+    public GameObject cabinPanel;
 
     public static MainUI instance;
 
@@ -104,59 +104,59 @@ public class MainUI : MonoBehaviour
 
     public void toggleCommuCampPanel()
     {
-        if (!CommuCampPanel.activeInHierarchy)
+        if (!commuCampPanel.activeInHierarchy)
         {
-            CommuCampPanel.SetActive(true);
+            commuCampPanel.SetActive(true);
         }
         else
         {
-            CommuCampPanel.SetActive(false);
+            commuCampPanel.SetActive(false);
         }
     }
 
     public void toggleLoggerCampPanel()
     {
-        if (!LoggerCampPanel.activeInHierarchy)
+        if (!loggerCampPanel.activeInHierarchy)
         {
-            LoggerCampPanel.SetActive(true);
+            loggerCampPanel.SetActive(true);
         }
         else
         {
-            LoggerCampPanel.SetActive(false);
+            loggerCampPanel.SetActive(false);
         }
     }
     public void toggleMinePanel()
     {
-        if (!MinePanel.activeInHierarchy)
+        if (!minePanel.activeInHierarchy)
         {
-            MinePanel.SetActive(true);
+            minePanel.SetActive(true);
         }
         else
         {
-            MinePanel.SetActive(false);
+            minePanel.SetActive(false);
         }
     }
     public void toggleCabinPanel()
     {
-        if (!CabinPanel.activeInHierarchy)
+        if (!cabinPanel.activeInHierarchy)
         {
-            CabinPanel.SetActive(true);
+            cabinPanel.SetActive(true);
         }
         else
         {
-            CabinPanel.SetActive(false);
+            cabinPanel.SetActive(false);
         }
     }
 
     public void toggleCampFirePanel()
     {
-        if (!CampFirePanel.activeInHierarchy)
+        if (!campFirePanel.activeInHierarchy)
         {
-            CampFirePanel.SetActive(true);
+            campFirePanel.SetActive(true);
         }
         else
         {
-            CampFirePanel.SetActive(false);
+            campFirePanel.SetActive(false);
         }
     }
     public void UpdateDayText()
