@@ -186,6 +186,39 @@ public class StructureManager : MonoBehaviour
         }
     }
 
+    public void Demolish_structure()
+    {
+        Structure s = Office.instance.Structures.Find(x => x.transform.position == CurStructure.transform.position);
+
+        if (s != null)
+        {
+            Office.instance.RemoveBuilding(s);
+        }
+        MainUI.instance.UpdateResourceUI();
+        switch (CurStructure.tag) //hit.collider.tag
+        {
+            case "CommuCamp": // if we click Object with tag 
+                MainUI.instance.toggleCommuCampPanel();
+                break;
+            case "FishingPond":
+                MainUI.instance.toggleFishpondPanel();
+                break;
+            case "Cabin":
+                MainUI.instance.toggleCabinPanel();
+                break;
+            case "CampFire":
+                MainUI.instance.toggleCampFirePanel();
+                break;
+            case "LoggerCamp":
+                MainUI.instance.toggleLoggerCampPanel();
+                break;
+            case "Mine":
+                MainUI.instance.toggleMinePanel();
+                break;
+
+        }
+    }
+
     /*public void DemolishOnClick()
     {
         Structure s = Office.instance.Structures[]; 
