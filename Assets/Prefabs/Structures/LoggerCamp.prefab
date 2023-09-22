@@ -173,6 +173,11 @@ MonoBehaviour:
   id: 0
   isHousing: 0
   houseUnit: 0
+  maxStaffNum: 3
+  produceTimer: 0
+  produceTime: 0
+  produceRate: 0
+  currentWorkers: []
 --- !u!65 &1429752549253504697
 BoxCollider:
   m_ObjectHideFlags: 0

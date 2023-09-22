@@ -53,8 +53,6 @@ public class StructureManager : MonoBehaviour
             gridPlane.SetActive(false);
         }
 
-        //DemolishOnClick();
-
         CheckLeftClick();
     }
 
@@ -218,14 +216,6 @@ public class StructureManager : MonoBehaviour
 
         }
     }
-
-    /*public void DemolishOnClick()
-    {
-        Structure s = Office.instance.Structures[]; 
-
-        Office.instance.RemoveBuilding(s);
-        MainUI.instance.UpdateResourceUI();
-    }*/
 
     public void CallStafftoFishingPound()
     {
