@@ -20,11 +20,11 @@ public class Anken : Unit
     public int CharSkinID { get { return charSkinID; } set { charSkinID = value; } }
     public GameObject[] charSkin;
 
-    [SerializeField]private float sp = 200;
+    [SerializeField] private float sp = 200;
     public float SP { get { return sp; } set { sp = value; } }
 
     [SerializeField] private float hunger = 220;
-    public float Hunger { get {  return hunger; } set {  hunger = value; } }
+    public float Hunger { get { return hunger; } set { hunger = value; } }
 
 
     [SerializeField] private int charFaceID;
@@ -40,6 +40,9 @@ public class Anken : Unit
 
     [SerializeField] private bool hired = false;
     public bool Hired { get { return hired; } set { hired = value; } }
+
+    [SerializeField] private int dialyFish;
+    public int DialyFish { get { return dialyFish; } set { dialyFish = value; } }
 
 
 
@@ -126,7 +129,7 @@ public class Anken : Unit
     }
 
 
-    #region Wodd Cutting
+    #region Wood Cutting
     public void StartCutting(GameObject forest)
     {
         if (forest == null)

@@ -18,8 +18,6 @@ public class LoggerCamp : Structure
     public int ProduceRate { get { return produceRate; } set { produceRate = value; } }
     public int ProduceTime { get { return produceTime; } set { produceTime = value; } }
 
-    [SerializeField] private List<Anken> currentWorkers;
-    public List<Anken> CurrentWorkers { get { return currentWorkers; } set { currentWorkers = value; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +27,7 @@ public class LoggerCamp : Structure
     // Update is called once per frame
     void Update()
     {
-        if (currentWorkers.Count > 0)
+        if (CurrentWorkers.Count > 0)
         {
             cutting();
         }
@@ -42,13 +40,9 @@ public class LoggerCamp : Structure
         if (produceTimer >= produceTime)
         {
             produceTimer = 0;
-            Office.instance.Wood += produceRate * currentWorkers.Count;
+            Office.instance.Wood += produceRate * CurrentWorkers.Count;
             MainUI.instance.UpdateResourceUI();
         }
     }
 
-    public void AddStaffToCutTree(Anken w)
-    {
-        currentWorkers.Add(w);
-    }
 }

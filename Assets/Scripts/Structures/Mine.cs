@@ -18,8 +18,6 @@ public class Mine : Structure
     public int ProduceRate { get {  return produceRate; } set {  produceRate = value; } }
     public int ProduceTime { get {  return produceTime; } set { produceTime = value;  } }
 
-    [SerializeField] private List<Anken> currentWorkers;
-    public List<Anken> CurrentWorkers { get { return currentWorkers; } set { currentWorkers = value; } }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +27,7 @@ public class Mine : Structure
     // Update is called once per frame
     void Update()
     {
-        if(currentWorkers.Count > 0)
+        if(CurrentWorkers.Count > 0)
         {
             mine();
         }
@@ -42,13 +40,10 @@ public class Mine : Structure
         if (produceTimer >= produceTime)
         {
             produceTimer = 0;
-            Office.instance.Stone += produceRate * currentWorkers.Count;
+            Office.instance.Stone += produceRate * CurrentWorkers.Count;
             MainUI.instance.UpdateResourceUI();
         }
     }
 
-    public void AddStaffToMine(Anken w)
-    {
-        currentWorkers.Add(w);
-    }
+
 }

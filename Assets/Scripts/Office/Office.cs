@@ -27,7 +27,7 @@ public class Office : MonoBehaviour
     [SerializeField] private List<Structure> structures = new List<Structure>();
     public List<Structure> Structures { get { return structures; } }
 
-    [SerializeField] private int dailyCostWages;
+    [SerializeField] private int dailyCostFish;
 
     [SerializeField] private GameObject staffParent;
     [SerializeField] private GameObject spawnPosition;
@@ -93,8 +93,15 @@ public class Office : MonoBehaviour
     public void AddStaff(Anken w)
     {
         ankens.Add(w);
-        //dailyCostWages += w.DailyWage;
+        dailyCostFish += w.DialyFish;
     }
+    public void RemoveStaff(Anken w)
+    {
+        ankens.Remove(w);
+        dailyCostFish -= w.DialyFish;
+    }
+
+
     public void CheckHousing()
     {
         unitLimit = 4; //starting unit Limit
@@ -144,7 +151,7 @@ public class Office : MonoBehaviour
                 Debug.Log(target);
                 Debug.Log(target.transform.position);
                 ankens[i].SetToWalk(target.transform.position);
-                f.AddStaffToFarm(w);
+                f.AddStaff(w);
                 n++;
 
             }
@@ -179,7 +186,7 @@ public class Office : MonoBehaviour
                 Debug.Log(target);
                 Debug.Log(target.transform.position);
                 ankens[i].SetToWalk(target.transform.position);
-                f.AddStaffToMine(w);
+                f.AddStaff(w);
                 n++;
 
             }
@@ -238,10 +245,8 @@ public class Office : MonoBehaviour
             {
                 Anken w = ankens[i].GetComponent<Anken>();
                 ankens[i].TargetStructure = target;
-                Debug.Log(target);
-                Debug.Log(target.transform.position);
                 ankens[i].SetToWalk(target.transform.position);
-                f.AddStaffToCutTree(w);
+                f.AddStaff(w);
                 n++;
 
             }
@@ -252,4 +257,45 @@ public class Office : MonoBehaviour
 
         UpdateAvailStaff();
     }
+
+    public void DialyCostFishUpdate()
+    {
+        if(fish > dailyCostFish) {
+            fish -= dailyCostFish;
+        }
+        else
+        {
+            fish = 0;
+        }
+        
+    }
+
+    //public bool ToFireStaff(GameObject staffObj)
+    //{
+    //    staffObj.transform.parent = LaborMarket.instance.WorkerParent.transform;
+    //    //move Staff obj back to Labor Market
+
+        
+
+
+    //    Anken w = staffObj.GetComponent<Anken>();
+    //    w.Hired = false; //Fire this staff
+
+    //    if (w.TargetStructure != null)
+    //    {
+    //        Farm f = w.TargetStructure.GetComponent<Farm>();
+    //        if (f != null)
+    //            f.CurrentWorkers.Remove(w); //Remove from this farm
+    //    }
+
+    //    w.TargetStructure = null; //Quit working
+    //    //w.DisableAllTools();
+    //    w.SetToWalk(spawnPosition.transform.position);
+
+    //    RemoveStaff(w);
+    //    MainUI.instance.UpdateResourceUI();
+
+    //    return true;
+    //}
+
 }

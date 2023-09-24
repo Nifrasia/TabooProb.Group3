@@ -185,7 +185,7 @@ public class StructureManager : MonoBehaviour
     }
 
     public void Demolish_structure()
-    {
+        {
         Structure s = Office.instance.Structures.Find(x => x.transform.position == CurStructure.transform.position);
 
         if (s != null)

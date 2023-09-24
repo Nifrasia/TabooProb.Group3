@@ -105,6 +105,7 @@ MonoBehaviour:
   staffName: 
   staffGender: 0
   hired: 0
+  dialyFish: 10
   targetForest: {fileID: 0}
   curAmount: 0
   cuttingTimer: 0

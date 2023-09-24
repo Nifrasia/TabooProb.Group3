@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
         {
             dayTimer = 0f;
             day++;
+            Office.instance.DialyCostFishUpdate();
+            MainUI.instance.UpdateResourceUI();
             MainUI.instance.UpdateDayText();
         }
     }

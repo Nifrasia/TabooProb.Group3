@@ -14,7 +14,9 @@ public enum UnitState
     MovetoDeliver,
     Deliver,
     MovetoCutTree,
-    CutTree
+    CutTree,
+    MoveToAttack,
+    AttackUnit
 
 }
 
@@ -48,6 +50,10 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected float CheckStateTimeWait = 0.5f;
 
     [SerializeField] protected GameObject[] tools;
+
+
+    [SerializeField] protected GameObject targetUnit;
+    public GameObject TargetUnit { get { return targetUnit; } set { targetUnit = value; } }
 
 
     public UnityEvent<UnitState> onStateChange;
@@ -85,6 +91,12 @@ public abstract class Unit : MonoBehaviour
             case UnitState.Walk:
                 WalkUpdate();
                 break;
+            case UnitState.MoveToAttack:
+                MoveToAttackUnit();
+                break;
+            case UnitState.Attack:
+                AttackUnit();
+                break;
         }
     }
 
@@ -100,7 +112,6 @@ public abstract class Unit : MonoBehaviour
 
     public void SetToWalk(Vector3 dest)
     {
-        Debug.Log(dest);
         state = UnitState.Walk;
         navAgent.SetDestination(dest);
         navAgent.isStopped = false;
@@ -134,5 +145,67 @@ public abstract class Unit : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, angle, 0);
     }
 
+    public void TakeDamage(Unit attacker)
+    {
+        CheckSelfDefence(attacker);
 
+        hp -= attacker.AttackPower;
+        if (hp <= 0)
+            Destroy(gameObject);
+    }
+
+    protected void AttackUnit()
+    {
+        //EquipWeapon();
+
+        if (navAgent != null)
+            navAgent.isStopped = true;
+
+        if (targetUnit != null)
+        {
+            LookAt(targetUnit.transform.position);
+
+            Unit u = targetUnit.GetComponent<Unit>();
+            u.TakeDamage(this);
+        }
+        else
+        {
+            targetUnit = null;
+            SetUnitState(UnitState.Idle);
+        }
+    }
+
+
+    protected void MoveToAttackUnit()
+    {
+        if (targetUnit == null)
+        {
+            SetUnitState(UnitState.Idle);
+            navAgent.isStopped = true;
+            return;
+        }
+        else
+        {
+            navAgent.SetDestination(targetUnit.transform.position);
+            navAgent.isStopped = false;
+        }
+
+        distance = Vector3.Distance(transform.position, targetUnit.transform.position);
+
+        if (distance <= attackRange)
+            SetUnitState(UnitState.AttackUnit);
+    }
+
+
+    public void CheckSelfDefence(Unit u)
+    {
+        if (u.gameObject != null)
+        {
+            if (u.gameObject == targetUnit) //it's already a target
+                return;
+
+            targetUnit = u.gameObject;
+            SetUnitState(UnitState.MoveToAttack);
+        }
+    }
 }

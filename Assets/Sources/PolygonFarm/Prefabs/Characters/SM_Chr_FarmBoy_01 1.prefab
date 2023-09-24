@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 4596640331168922}
   - component: {fileID: 95672999797837872}
   m_Layer: 0
-  m_Name: SM_Chr_FarmBoy_01
+  m_Name: SM_Chr_FarmBoy_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1393,7 +1393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4137135469034742
 Transform:
   m_ObjectHideFlags: 0
@@ -2033,6 +2033,140 @@ Transform:
   m_Father: {fileID: 4199001347423730}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1920296411442848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8600313474811141679, guid: 1389e656a39213041ab553b417896c6a, type: 3}
+  m_PrefabInstance: {fileID: 8600927467083411599}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4111527195865798}
+  - component: {fileID: 137837758221459430}
+  m_Layer: 0
+  m_Name: SM_Chr_Scarecrow_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4111527195865798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8597999096056660553, guid: 1389e656a39213041ab553b417896c6a, type: 3}
+  m_PrefabInstance: {fileID: 8600927467083411599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920296411442848}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4596640331168922}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &137837758221459430
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 8553764249384857449, guid: 1389e656a39213041ab553b417896c6a, type: 3}
+  m_PrefabInstance: {fileID: 8600927467083411599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920296411442848}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fdf18c58b725a2f469593ece1786d307, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300000, guid: 0125309e38bea8a48bc578cf8f220634, type: 3}
+  m_Bones:
+  - {fileID: 4328154389757516}
+  - {fileID: 4335639912996728}
+  - {fileID: 4069658392936272}
+  - {fileID: 4769613798878984}
+  - {fileID: 4846171512213972}
+  - {fileID: 4626962210387404}
+  - {fileID: 4113290306672980}
+  - {fileID: 4470909318005828}
+  - {fileID: 4677956234197282}
+  - {fileID: 4044534600394712}
+  - {fileID: 4783786716379826}
+  - {fileID: 4036649517172650}
+  - {fileID: 4369486794547878}
+  - {fileID: 4169636555854738}
+  - {fileID: 4165595338799774}
+  - {fileID: 4108760037492368}
+  - {fileID: 4040165731168430}
+  - {fileID: 4016014748173822}
+  - {fileID: 4816335703755410}
+  - {fileID: 4946436102743716}
+  - {fileID: 4191860787115076}
+  - {fileID: 4631243430895618}
+  - {fileID: 4199001347423730}
+  - {fileID: 4097002696032018}
+  - {fileID: 4911285961028042}
+  - {fileID: 4238996146327476}
+  - {fileID: 4441328374251318}
+  - {fileID: 4462292754228704}
+  - {fileID: 4177166393938564}
+  - {fileID: 4554065454502858}
+  - {fileID: 4336976922634464}
+  - {fileID: 4537015879210168}
+  - {fileID: 4204797740327150}
+  - {fileID: 4822686125180756}
+  - {fileID: 4862334226575360}
+  - {fileID: 4881596883627308}
+  - {fileID: 4735299951607004}
+  - {fileID: 4951527545435822}
+  - {fileID: 4346880067652052}
+  - {fileID: 4543171758861598}
+  - {fileID: 4187114341137788}
+  - {fileID: 4437972066411162}
+  - {fileID: 4693333460825920}
+  - {fileID: 4360274141610666}
+  - {fileID: 4483886986602790}
+  - {fileID: 4659942144126264}
+  - {fileID: 4590063943884452}
+  - {fileID: 4605079867326398}
+  - {fileID: 4580478914062248}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 4328154389757516}
+  m_AABB:
+    m_Center: {x: 0.000000059604645, y: 0.8434789, z: -0.045883328}
+    m_Extent: {x: 1.0245616, y: 0.9445722, z: 0.27280745}
+  m_DirtyAABB: 0
 --- !u!1 &1931053778553180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,10 +2686,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Chr_Scarecrow_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8600313474811141679, guid: 1389e656a39213041ab553b417896c6a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1389e656a39213041ab553b417896c6a, type: 3}
---- !u!4 &4111527195865798 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8597999096056660553, guid: 1389e656a39213041ab553b417896c6a, type: 3}
-  m_PrefabInstance: {fileID: 8600927467083411599}
-  m_PrefabAsset: {fileID: 0}

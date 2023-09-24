@@ -39,10 +39,24 @@ public abstract class Structure : MonoBehaviour
     [SerializeField] protected int houseUnit;
     public int HouseUnit { get { return houseUnit; } }
 
+    [SerializeField] private List<Anken> currentWorkers;
+    public List<Anken> CurrentWorkers { get { return currentWorkers; } set { currentWorkers = value; } }
+
     // Start is called before the first frame update
     void Start()
     {
         functional = false;
         hp = 1;
+    }
+
+
+    public void AddStaff(Anken w)
+    {
+        currentWorkers.Add(w);
+    }
+
+    public void RemoveStaff(Anken w)
+    {
+        currentWorkers.Remove(w);
     }
 }

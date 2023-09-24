@@ -35,9 +35,6 @@ public class Fishingpond : Structure
 
     [SerializeField] private GameObject FarmUI;
 
-    [SerializeField] private List<Anken> currentWorkers;
-    public List<Anken> CurrentWorkers { get { return currentWorkers; } set { currentWorkers = value; } }
-
     void Start()
     {
         
@@ -46,7 +43,10 @@ public class Fishingpond : Structure
     // Update is called once per frame
     void Update()
     {
-        checkState();
+        if(CurrentWorkers.Count > 0)
+        {
+            checkState();
+        }
     }
 
     public void checkState()
@@ -91,18 +91,12 @@ public class Fishingpond : Structure
         if (produceTimer >= catchingTime)
         {
             produceTimer = 0;
-            Office.instance.Fish += Product;
+            Office.instance.Fish += Product * CurrentWorkers.Count;
             MainUI.instance.UpdateResourceUI();
             stage = FarmStage.throwing;
         }
 
     }
-
-    public void AddStaffToFarm(Anken w)
-    {
-        currentWorkers.Add(w);
-    }
-
 
 
 }

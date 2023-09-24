@@ -29,12 +29,14 @@ public class AnkenController : MonoBehaviour
                 anim.SetBool("isIdle", true);
                 break;
             case UnitState.Walk:
+            case UnitState.MoveToAttack:
                 anim.SetBool("isWalk", true);
                 break;
             case UnitState.Death:
                 anim.SetBool("isDeath", true);
                 break;
             case UnitState.Attack:
+            case UnitState.AttackUnit:
                 anim.SetBool("isAttack", true);
                 break;
         }
