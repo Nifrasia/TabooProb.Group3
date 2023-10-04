@@ -35,7 +35,7 @@ public class AnkenController : MonoBehaviour
             case UnitState.Death:
                 anim.SetBool("isDeath", true);
                 break;
-            case UnitState.Attack:
+            case UnitState.Attack:  
             case UnitState.AttackUnit:
                 anim.SetBool("isAttack", true);
                 break;
