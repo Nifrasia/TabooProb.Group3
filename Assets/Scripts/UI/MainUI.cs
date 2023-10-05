@@ -11,8 +11,6 @@ public class MainUI : MonoBehaviour
     [SerializeField] private TMP_Text fishText;
     [SerializeField] private TMP_Text ankenText;
 
-    [SerializeField] private TMP_Text dayText;
-
     public GameObject optionsPanel;
     public GameObject settingPanel;
     public GameObject buildPanel;
@@ -31,7 +29,6 @@ public class MainUI : MonoBehaviour
     {
         instance = this;
         UpdateResourceUI();
-        UpdateDayText();
 
     }
 
@@ -158,9 +155,5 @@ public class MainUI : MonoBehaviour
         {
             campFirePanel.SetActive(false);
         }
-    }
-    public void UpdateDayText()
-    {
-        dayText.text = "Day " + TimeController.instance.Day.ToString();
     }
 }

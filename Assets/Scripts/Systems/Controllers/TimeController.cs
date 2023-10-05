@@ -28,6 +28,7 @@ public class TimeController : MonoBehaviour
     private TimeSpan sunriseTime;
     private TimeSpan sunsetTime;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +47,9 @@ public class TimeController : MonoBehaviour
 
     public void TimeUpdate()
     {
-        currentTime = currentTime.AddHours(Time.deltaTime);
 
-        Timer = currentTime.ToString("HH : mm");
+        currentTime = currentTime.AddSeconds(Time.deltaTime * ((1440f * 60)/dayLenght));
+        Timer = currentTime.ToString();
         DayUpdate();
 
     }
@@ -57,9 +58,10 @@ public class TimeController : MonoBehaviour
     {
         if(day < currentTime.Day)
         {
-
+            Office.instance.DialyCostFishUpdate();
+            MainUI.instance.UpdateResourceUI();
         }
-
+        day = currentTime.Day;
         dayText.text = "Day " + currentTime.Day.ToString();
     }
 
@@ -85,7 +87,6 @@ public class TimeController : MonoBehaviour
 
             sunLightRotation = Mathf.Lerp(180, 360, (float)percentage);
         }
-        Debug.Log(sunLightRotation);
         _sunLight.transform.rotation = Quaternion.AngleAxis(sunLightRotation, Vector3.right);
 
     }
