@@ -40935,7 +40935,7 @@ GameObject:
   - component: {fileID: 2042220225}
   - component: {fileID: 2042220224}
   m_Layer: 0
-  m_Name: TimeController
+  m_Name: timeController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40954,7 +40954,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   day: 0
-  minuteInOneDay: 0
+  dayLenght: 5
+  Timer: 
+  startHour: 6
+  _sunLight: {fileID: 705507994}
+  sunRiseHour: 6
+  sunSetHour: 18
 --- !u!4 &2042220225
 Transform:
   m_ObjectHideFlags: 0

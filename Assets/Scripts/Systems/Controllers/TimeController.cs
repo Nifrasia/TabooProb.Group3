@@ -1,27 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TimeController : MonoBehaviour
 {
+    public static TimeController instance;
 
     [SerializeField] private int day = 0;
-    public int Day { get { return day; } set { day = value; } }
+    //public int Day { get { return day; } set { day = value; } }
 
 
-    [SerializeField] private DateTime CurrentTime;
+    [SerializeField] private DateTime currentTime;
     [SerializeField] public int dayLenght; // in second
 
     [SerializeField] private String Timer;
-
+    [SerializeField] private TMP_Text dayText;
 
 
     [SerializeField] private float startHour;
 
     [SerializeField] private Light _sunLight;
-    [SerializeField] private float sunRiseHour = 5;
-    [SerializeField] private float sunSetHour = 5;
+    [SerializeField] private float sunRiseHour;
+    [SerializeField] private float sunSetHour;
 
     private TimeSpan sunriseTime;
     private TimeSpan sunsetTime;
@@ -37,23 +39,55 @@ public class TimeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     TimeUpdate();
+        TimeUpdate();
+        RotateSun();
         
     }
 
     public void TimeUpdate()
     {
-        CurrentTime = CurrentTime.AddMinutes(Time.deltaTime);
-        //((Time.deltaTime * (24 / minuteInOneDay)) / 60)
-        //TimeOfDay += ((Time.deltaTime * (24 / dayLenght)) / 60);
+        currentTime = currentTime.AddHours(Time.deltaTime);
 
-        Timer = CurrentTime.ToString("HH : mm");
-        //Timer = TimeOfDay.ToString();
+        Timer = currentTime.ToString("HH : mm");
+        DayUpdate();
+
     }
 
     public void DayUpdate()
     {
-        day++;
+        if(day < currentTime.Day)
+        {
+
+        }
+
+        dayText.text = "Day " + currentTime.Day.ToString();
+    }
+
+    private void RotateSun()
+    {
+        float sunLightRotation;
+
+        if(currentTime.TimeOfDay >  sunriseTime && currentTime.TimeOfDay < sunsetTime)
+        {
+            TimeSpan sunriseToSunsetDuration = CalculateTimeDifferent(sunriseTime, sunsetTime);
+            TimeSpan timeSinceSunrise = CalculateTimeDifferent(sunriseTime, currentTime.TimeOfDay);
+
+            double percentage = timeSinceSunrise.TotalMinutes / sunriseToSunsetDuration.TotalMinutes;
+
+            sunLightRotation = Mathf.Lerp(0,180,(float)percentage);
+        }
+        else
+        {
+            TimeSpan sunsetToSunriseDuration = CalculateTimeDifferent(sunsetTime, sunriseTime);
+            TimeSpan timeSinceSunset = CalculateTimeDifferent(sunsetTime, currentTime.TimeOfDay);
+
+            double percentage = timeSinceSunset.TotalMinutes / sunsetToSunriseDuration.TotalMinutes;
+
+            sunLightRotation = Mathf.Lerp(180, 360, (float)percentage);
+        }
+        Debug.Log(sunLightRotation);
+        _sunLight.transform.rotation = Quaternion.AngleAxis(sunLightRotation, Vector3.right);
+
     }
 
 

@@ -161,6 +161,6 @@ public class MainUI : MonoBehaviour
     }
     public void UpdateDayText()
     {
-        dayText.text = "Day " + GameManager.instance.Day.ToString();
+        dayText.text = "Day " + TimeController.instance.Day.ToString();
     }
 }
