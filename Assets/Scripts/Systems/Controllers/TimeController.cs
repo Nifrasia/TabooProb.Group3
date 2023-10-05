@@ -47,11 +47,9 @@ public class TimeController : MonoBehaviour
 
     public void TimeUpdate()
     {
-
         currentTime = currentTime.AddSeconds(Time.deltaTime * ((1440f * 60)/dayLenght));
         Timer = currentTime.ToString();
         DayUpdate();
-
     }
 
     public void DayUpdate()
