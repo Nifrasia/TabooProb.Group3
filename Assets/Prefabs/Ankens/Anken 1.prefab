@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4713400405572067006}
   m_Layer: 0
   m_Name: Anken 1
-  m_TagString: Untagged
+  m_TagString: Unit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,11 +78,12 @@ MonoBehaviour:
   state: 0
   targetStructure: {fileID: 0}
   detectRange: 50
-  attackRange: 2
+  attackRange: 25
   attackPower: 5
   CheckStateTimer: 0
   CheckStateTimeWait: 0.5
   tools: []
+  targetUnit: {fileID: 0}
   onStateChange:
     m_PersistentCalls:
       m_Calls: []

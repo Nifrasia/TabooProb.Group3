@@ -16,7 +16,6 @@ public enum UnitState
     MovetoCutTree,
     CutTree,
     MoveToAttack,
-    AttackUnit
 
 }
 
@@ -32,7 +31,7 @@ public abstract class Unit : MonoBehaviour
     protected NavMeshAgent navAgent;
     public NavMeshAgent NavAgent { get { return navAgent; } set { navAgent = value; } }
 
-    private float distance;
+    protected float distance;
 
     [SerializeField] protected GameObject targetStructure;
     public GameObject TargetStructure { get { return targetStructure; } set { targetStructure = value; } }
@@ -157,7 +156,6 @@ public abstract class Unit : MonoBehaviour
     protected void AttackUnit()
     {
         //EquipWeapon();
-
         if (navAgent != null)
             navAgent.isStopped = true;
 
@@ -184,16 +182,16 @@ public abstract class Unit : MonoBehaviour
             navAgent.isStopped = true;
             return;
         }
-        else
-        {
-            navAgent.SetDestination(targetUnit.transform.position);
-            navAgent.isStopped = false;
-        }
 
         distance = Vector3.Distance(transform.position, targetUnit.transform.position);
+        navAgent.SetDestination(targetUnit.transform.position);
+        navAgent.isStopped = false;
 
-        if (distance <= attackRange)
-            SetUnitState(UnitState.AttackUnit);
+        if (distance <= attackRange) {
+            SetUnitState(UnitState.Attack   );
+            navAgent.isStopped = true;
+        }
+
     }
 
 

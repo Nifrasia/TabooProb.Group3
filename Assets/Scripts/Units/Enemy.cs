@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : Unit
@@ -17,11 +18,6 @@ public class Enemy : Unit
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     //private void OnTriggerStay(Collider other)
     //{
@@ -38,13 +34,20 @@ public class Enemy : Unit
     {
         // get nearest enemy
         Unit enemyUnit = CheckForNearestEnemyUnit();
-
         //check is enemy null
-        if(enemyUnit != null)
+        if (enemyUnit != null)  
         {
             //if enemy is exist set target and set unit state
             targetUnit = enemyUnit.gameObject;
-            SetUnitState(UnitState.MoveToAttack);
+            distance = Vector3.Distance(transform.position, targetUnit.transform.position);
+            if (distance <= attackRange)
+            {
+                SetUnitState(UnitState.Attack);
+            }
+            else
+            {
+                SetUnitState(UnitState.MoveToAttack);
+            }
         }
         else
         {

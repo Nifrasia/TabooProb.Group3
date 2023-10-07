@@ -12,6 +12,7 @@ TagManager:
   - LoggerCamp
   - Mine
   - Forest
+  - Unit
   layers:
   - Default
   - TransparentFX
