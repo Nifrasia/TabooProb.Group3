@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class StructureManager : MonoBehaviour
 {
     [SerializeField] private bool isConstructing;
-    [SerializeField] private bool isDemolishing;
+    //[SerializeField] private bool isDemolishing;
 
     [SerializeField] private GameObject curBuildingPrefab;
     [SerializeField] private GameObject buildingParent;
@@ -63,7 +63,7 @@ public class StructureManager : MonoBehaviour
             return;
         }
 
-        isDemolishing = false;
+        //isDemolishing = false;
         isConstructing = true;
 
         curBuildingPrefab = prefab;
